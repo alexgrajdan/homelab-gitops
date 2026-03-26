@@ -1,0 +1,28 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Flux
+.flux.yaml
+
+# Secrets (SOPS/age)
+# Private keys should never be committed
+*.agekey
+age.key
+.env
+.secrets
+
+# Kubernetes
+.kube/
+kubeconfig
+
+# Local development
+node_modules/
+dist/
+build/
