@@ -1,0 +1,30 @@
+name: Trivy IaC Scanner
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  scan-manifests:
+    name: Scan Kubernetes Manifests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Trivy vulnerability scanner in IaC mode
+        uses: aquasecurity/trivy-action@master
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+          # This is to exclude the flux-system folder from scanning
+          TRIVY_SKIP_DIRS: "clusters/on-prem-k3s-cluster/flux-system"
+        with:
+          scan-type: 'config'
+          scan-ref: '.'
+          hide-progress: false
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          severity: 'HIGH,CRITICAL'
