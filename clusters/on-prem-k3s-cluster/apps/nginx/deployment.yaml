@@ -5,6 +5,12 @@ metadata:
   namespace: nginx
 spec:
   replicas: 3
+  # Use a rolling update strategy with maxSurge set to 0 and maxUnavailable set to 1 to ensure that only one pod is unavailable during updates, improving availability
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: nginx
