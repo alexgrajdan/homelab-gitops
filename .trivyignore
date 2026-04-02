@@ -1,1 +1,4 @@
 # This is where are specified any exceptions from trivy scan
+
+# Ignore false positive alarm about untrusted registry for official images from other namespaces
+KSV-0125
