@@ -35,7 +35,7 @@ spec:
           type: RuntimeDefault
       containers:
       - name: nginx
-        image: nginx:alpine
+        image: nginxinc/nginx-unprivileged:alpine
         # Set security context for the nginx container to further enhance security by dropping all capabilities, preventing privilege escalation, and using a read-only root filesystem
         securityContext:
           allowPrivilegeEscalation: false
