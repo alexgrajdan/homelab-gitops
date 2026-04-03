@@ -1,0 +1,13 @@
+# Web service for AdGuard Home
+apiVersion: v1
+kind: Service
+metadata:
+  name: adguard-web
+  namespace: adguard
+spec:
+  selector:
+    app: adguard
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
