@@ -4,7 +4,7 @@ metadata:
   name: adguard
   namespace: adguard
 spec:
-  replicas: 0  # Stopped for now
+  replicas: 1
   selector:
     matchLabels:
       app: adguard
