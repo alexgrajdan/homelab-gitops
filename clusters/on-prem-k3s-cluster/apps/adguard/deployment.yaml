@@ -22,7 +22,7 @@ spec:
           type: RuntimeDefault
       containers:
       - name: adguard
-        image: adguard/adguardhome:v0.107.54
+        image: adguard/adguardhome:v0.107.73
         resources:
           requests:
             cpu: 100m
