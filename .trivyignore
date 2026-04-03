@@ -2,3 +2,9 @@
 
 # Ignore false positive alarm about untrusted registry for official images from other namespaces
 KSV-0125
+
+# AdGuard Home exception: It is a DNS server, it needs to use port 53
+KSV-0117
+
+# AdGuard Home exception: Permission for NET_BIND_SERVICE to use ports below 1024
+KSV-0022
