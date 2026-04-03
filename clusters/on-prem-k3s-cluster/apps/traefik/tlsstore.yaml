@@ -5,4 +5,4 @@ metadata:
   namespace: traefik
 spec:
   defaultCertificate:
-    secretName: wildcard-alexdevops-staging-tls
+    secretName: wildcard-alexdevops-prod-tls
