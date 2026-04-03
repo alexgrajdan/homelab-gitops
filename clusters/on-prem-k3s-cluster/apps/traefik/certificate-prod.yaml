@@ -1,12 +1,12 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: wildcard-alexdevops-staging
+  name: wildcard-alexdevops-prod
   namespace: traefik
 spec:
-  secretName: wildcard-alexdevops-staging-tls
+  secretName: wildcard-alexdevops-prod-tls
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt-prod
     kind: ClusterIssuer
   dnsNames:
     - "local.alexdevops.com"

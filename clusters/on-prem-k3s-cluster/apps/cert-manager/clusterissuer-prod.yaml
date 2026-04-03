@@ -1,0 +1,32 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+    name: letsencrypt-prod
+spec:
+    acme:
+        # Production URL for Let's Encrypt
+        server: https://acme-v02.api.letsencrypt.org/directory
+        email: ENC[AES256_GCM,data:32qTe/S62eDBn6XczV/I9zd844k6vmOQ+6oruQ==,iv:r0NqpLknXNK6YgHjGhgOI4oBQsDWjvFfOpjZzaXhdWc=,tag:Aww0eYrCfn/2sFZ7aFQgyQ==,type:str]
+        privateKeySecretRef:
+            name: letsencrypt-prod-account-key
+        solvers:
+            - dns01:
+                cloudflare:
+                    apiTokenSecretRef:
+                        name: cloudflare-api-token-secret
+                        key: api-token
+sops:
+    age:
+        - recipient: age1juj0yd8xjpf5slf6fdydfadvc4dn0aw930ava984z7t3qywzxstqcsalqx
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBySERVOEdMNmJuNU1tb1BX
+            NDNjYlBQZ2EyVHQvaVJKQk9FamtkNVpUUkhrCkdSSnBoYzl3TTNMN1MySW5ackxQ
+            WnEwTjZTWUVFTnUrc0Y4eWkzcDVmKzQKLS0tIEJZelhvOGptL2QxS3oyRHBZNU0v
+            N2Z6RVNYb0RmNTNTSHZUMUF3Q1JSeHcKZ2WnivvEWzPHg1W+OTB7sgK3jMqFJ9yH
+            2OPrjBvph0rJfHA8fK+CA2T/JYkgpvgeSbdZpW4up2jx6ipcXOwMxg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-04-03T07:53:32Z"
+    mac: ENC[AES256_GCM,data:zMo/7rYSjU6Xn3jiLpZeFC9yyb6xNLH5OWah85qpQcWp8h5gv4lCYNU8D5sLPHkxLxm9iPDnIW9PQKLgTRf+dJynGpv6+61JHcIrAGxYL6dPUZANfw+8VdC6epCamu3VF6qpwuua5HNqAcIo+GiIcPAs971Yd0sRwV1hqAR0cW4=,iv:mMV2UnPr0rRBe58wYALUq0xKDV2CB3l3MJeVslAGtLE=,tag:4AMPLXwLVQ9RqtJZw71v+Q==,type:str]
+    encrypted_regex: ^(data|stringData|email)$
+    version: 3.12.2
