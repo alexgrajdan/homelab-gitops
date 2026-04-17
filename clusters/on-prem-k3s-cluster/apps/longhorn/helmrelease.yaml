@@ -17,6 +17,9 @@ spec:
     crds: CreateReplace
   upgrade:
     crds: CreateReplace
+  valuesFrom:
+    - kind: Secret
+      name: longhorn-secret-values
   values:
     persistence:
       defaultClassReplicaCount: 3
