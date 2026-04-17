@@ -5,7 +5,7 @@ metadata:
   namespace: longhorn-system
 spec:
   selector:
-    app: longhorn
+    app: longhorn-ui
   ports:
     - port: 80
-      targetPort: 8080
+      targetPort: 8000
