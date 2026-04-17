@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: longhorn
+  namespace: longhorn-system
+spec:
+  selector:
+    app: longhorn
+  ports:
+    - port: 80
+      targetPort: 8080
