@@ -4,7 +4,7 @@ metadata:
   name: nginx
   namespace: nginx
 spec:
-  replicas: 3
+  replicas: 0 # scale down to 0, temporarily
   # Use a rolling update strategy with maxSurge set to 0 and maxUnavailable set to 1 to ensure that only one pod is unavailable during updates, improving availability
   strategy:
     type: RollingUpdate
