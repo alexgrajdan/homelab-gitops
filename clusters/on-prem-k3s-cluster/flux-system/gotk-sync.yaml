@@ -25,13 +25,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  # Decryption configuration for SOPS secrets
   decryption:
     provider: sops
     secretRef:
       name: sops-age
-  # Substitution for each secret
-  postBuild:
-    substituteFrom:
-      - kind: Secret
-        name: omv-secret
