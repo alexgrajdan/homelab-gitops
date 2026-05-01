@@ -1,10 +1,25 @@
 apiVersion: v1
 kind: Endpoints
 metadata:
-  name: omv-external
-  namespace: omv
+    name: omv-external
+    namespace: omv
 subsets:
-  - addresses:
-    - ip: ${OMV_IP}
-    ports:
-    - port: 80
+    - addresses:
+        - ip: ENC[AES256_GCM,data:6qDyTCz4VzPjcUBdxg==,iv:pPD9iq3UmbMY5etVN58iEVLCN8t6OJj7Q3Iv52WY05E=,tag:mTMHIFQx0WBQfyPCefQ9VA==,type:str]
+      ports:
+        - port: 80
+sops:
+    age:
+        - recipient: age1juj0yd8xjpf5slf6fdydfadvc4dn0aw930ava984z7t3qywzxstqcsalqx
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBWbDJTMmlTa0NQU2d1Nnht
+            SEZiZkZBOVlXRExnY3d1Szlic2hTYXE3SHhzCjJ4SmFRTGFrWm8zRXhNcEtIZHVY
+            VnFtdEFCbGwvaDloT3pUUTFMOHJ6b0UKLS0tIDAxNVRHekkwaTU4NWhJejduVnJF
+            NGhHNzV1N0JTMDNkd1NTcjB4OE9jUXcKDSbFBBTMLJCGvTh7dS31VgE2WEPoPzMy
+            h4HBoFhEhFgLaGdQ0njXxUzFSISK+xMthOlIEa9kcQzPuaGTfZh6fQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-05-01T19:22:13Z"
+    mac: ENC[AES256_GCM,data:iSfX2pYLHXMYfb7T4NwkKEnNnih1xMbsWC+l4eaAyXxEifCkuGqRF419klsE2rPBXhGpouU4xAFk/SVh+h/xRkGK64WtnL8KA51bAsOiBjlWigisuKvX1/CFvAT1dP2QRDoexCVJLXTlX5+gBU52aS6fGb7uSRhCcgLCvtaH5J4=,iv:gQ0uznGegzogW3ppdfEiy2/3HEhJCyskTNUDGb3m7T0=,tag:U+WXhvd4GLWMkvecrDCVEg==,type:str]
+    encrypted_regex: ^(data|stringData|email|ip)$
+    version: 3.12.2

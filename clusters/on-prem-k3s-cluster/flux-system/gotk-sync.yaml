@@ -30,8 +30,3 @@ spec:
     provider: sops
     secretRef:
       name: sops-age
-  # Substitution for each secret
-  postBuild:
-    substituteFrom:
-      - kind: Secret
-        name: omv-secret
