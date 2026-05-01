@@ -6,23 +6,26 @@ metadata:
     labels:
         kubernetes.io/service-name: omv-external
 addressType: IPv4
-subsets:
+endpoints:
     - addresses:
-        - ip: ENC[AES256_GCM,data:rvTZCLlZFcfWnNw8Dg==,iv:bYiHjOMuPpOOU2YhjREdBIUxWRC88v5fh1+HbJHa5vg=,tag:w5OYQyl6WhVoq6UCkmqPzg==,type:str]
-      ports:
-        - port: 80
+        - ENC[AES256_GCM,data:Dgesxt5B1Z/23iUN6w==,iv:lZYq4Cj8J/wYv3/k87y5SatOuR4A6jCwHR/Ju4cRGpg=,tag:Y2/uHDX9DCuPYnISdYGQ3w==,type:str]
+      conditions:
+        ready: true
+ports:
+    - port: 80
+      protocol: TCP
 sops:
     age:
         - recipient: age1juj0yd8xjpf5slf6fdydfadvc4dn0aw930ava984z7t3qywzxstqcsalqx
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzclpKb3RqREVJVXpmMS83
-            Mmt2YzI3Z0dkYVR4WXBDNnhLU3NpM0FBcFZzClhyRmFPekhBRk84SHBvejNoQXBW
-            b1crK2xzVUxKTUdOdk9DdkdXUEtKb0kKLS0tIGNhK240VjVTSmU2NTM5dVBuMzEv
-            Z3d0MVZ0SUdETlVlb2drcFd5VDlQUjgKG7FokYQWSS7hVUMcDvUgzVyv7W73QqLq
-            3APMLdKlSJK4iskvGTGoztc41gsgO34q9ZHus19c2AlvVBeBp4nCkA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBVaDV6ZCt4L2ltekdlVDV3
+            ay95WTNjMng3M2hyUHZRalBhVUVvVldBR25RCmNBYURrNVZYYWw3UngvcnBxSHRs
+            WVFqWFdOZXpNZmlxTlBFM1JCQmlZdGcKLS0tIEFNY0lCSmh3UTdLY0pVWm1yaWJM
+            eXVETG5Jbm9hcDUrS3pSaFYySk9zSkkKmZcxDJQaEod/3Yr/tqzSAIWmZE7GaYtX
+            5BwhtXz13uhsEz4UUs46CJ3U9LnNQKnpnvfKAFN5jllnWAiz13CIBA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2026-05-01T19:39:51Z"
-    mac: ENC[AES256_GCM,data:vWIgdk9FYJEk6h9x1XymrIOglsC+QzPglgTJoyrmFLL2cBPfMpyogvAr+U0/tvk77JTbsqP7+KT9deW6jyeOCVFBsBDe5b/G1luqAaBRk7nKnHWlfxAr5npC+EFUI5x6D6mUh3Q4EGP3QBO75fGbw1FPax1gw3mC+eALh224wE8=,iv:opOgVM4qg7eAnoMHb+kQQyhcGxLO+CVN7xvM1+Oyp2k=,tag:3sO0aLv2LLZ9zOeClRF7uw==,type:str]
-    encrypted_regex: ^(data|stringData|email|ip)$
+    lastmodified: "2026-05-01T20:01:10Z"
+    mac: ENC[AES256_GCM,data:CRWsCBHnekmvV04uui6wiIa7lH/9oYez0Y+X571NaawjLNTHQ79bNfUhJI1rCz2dszYByvPnib7cXE/8e+URKvvd7+a6+fXci1mvyb7+03JQk7ZRqY33ddcsjk0NCWVrC/5FjbHNXi0NS1GxsK6mzIaSEHyqL7R40yrbBjVuI+g=,iv:hUENaTj4aMKJZa6m91h3GtNdsL+U/KNmJa3uJwJUAJ4=,tag:5Z9GE+xZdDGpsmq+SOvDww==,type:str]
+    encrypted_regex: ^(data|stringData|email|addresses)$
     version: 3.12.2
