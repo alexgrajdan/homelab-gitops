@@ -1,0 +1,28 @@
+apiVersion: discovery.k8s.io/v1
+kind: EndpointSlice
+metadata:
+    name: omv-external
+    namespace: omv
+    labels:
+        kubernetes.io/service-name: omv-external
+addressType: IPv4
+subsets:
+    - addresses:
+        - ip: ENC[AES256_GCM,data:rvTZCLlZFcfWnNw8Dg==,iv:bYiHjOMuPpOOU2YhjREdBIUxWRC88v5fh1+HbJHa5vg=,tag:w5OYQyl6WhVoq6UCkmqPzg==,type:str]
+      ports:
+        - port: 80
+sops:
+    age:
+        - recipient: age1juj0yd8xjpf5slf6fdydfadvc4dn0aw930ava984z7t3qywzxstqcsalqx
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzclpKb3RqREVJVXpmMS83
+            Mmt2YzI3Z0dkYVR4WXBDNnhLU3NpM0FBcFZzClhyRmFPekhBRk84SHBvejNoQXBW
+            b1crK2xzVUxKTUdOdk9DdkdXUEtKb0kKLS0tIGNhK240VjVTSmU2NTM5dVBuMzEv
+            Z3d0MVZ0SUdETlVlb2drcFd5VDlQUjgKG7FokYQWSS7hVUMcDvUgzVyv7W73QqLq
+            3APMLdKlSJK4iskvGTGoztc41gsgO34q9ZHus19c2AlvVBeBp4nCkA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-05-01T19:39:51Z"
+    mac: ENC[AES256_GCM,data:vWIgdk9FYJEk6h9x1XymrIOglsC+QzPglgTJoyrmFLL2cBPfMpyogvAr+U0/tvk77JTbsqP7+KT9deW6jyeOCVFBsBDe5b/G1luqAaBRk7nKnHWlfxAr5npC+EFUI5x6D6mUh3Q4EGP3QBO75fGbw1FPax1gw3mC+eALh224wE8=,iv:opOgVM4qg7eAnoMHb+kQQyhcGxLO+CVN7xvM1+Oyp2k=,tag:3sO0aLv2LLZ9zOeClRF7uw==,type:str]
+    encrypted_regex: ^(data|stringData|email|ip)$
+    version: 3.12.2
