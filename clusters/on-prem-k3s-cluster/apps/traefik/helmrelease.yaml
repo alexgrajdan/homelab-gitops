@@ -27,3 +27,9 @@ spec:
     service:
       enabled: true
       type: LoadBalancer
+
+    # Redirect all HTTP traffic to HTTPS
+    ports:
+      web:
+        redirectTo: 
+          port: websecure
