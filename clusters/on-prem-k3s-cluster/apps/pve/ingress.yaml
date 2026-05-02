@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pve-ingress
+  namespace: pve
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    # This is telling Traefik to use HTTPS when talking to Proxmox
+    traefik.ingress.kubernetes.io/service.serversscheme: https
+    # Attaching server transport rule to skip TLS verification for self-signed certs from Proxmox
+    traefik.ingress.kubernetes.io/service.serverstransport: pve-transport@kubernetescrd
+spec:
+  rules:
+  - host: pve.local.alexdevops.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pve-external
+            port:
+              number: 8006

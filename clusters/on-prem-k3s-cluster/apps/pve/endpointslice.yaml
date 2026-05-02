@@ -1,0 +1,31 @@
+apiVersion: discovery.k8s.io/v1
+kind: EndpointSlice
+metadata:
+    name: pve-external
+    namespace: pve
+    labels:
+        kubernetes.io/service-name: pve-external
+addressType: IPv4
+endpoints:
+    - addresses:
+        - ENC[AES256_GCM,data:nz4qJmQV6dZ6Zx2eWg==,iv:jgjQcCIkzN4U50QnooSGMMjrNkrgqyYAjYQHwIy8W1s=,tag:Lk4G3MPSgtaVK/DKQGk/Wg==,type:str]
+      conditions:
+        ready: true
+ports:
+    - port: 8006
+      protocol: TCP
+sops:
+    age:
+        - recipient: age1juj0yd8xjpf5slf6fdydfadvc4dn0aw930ava984z7t3qywzxstqcsalqx
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA3ZGR0RllXQllUQXcvdm1h
+            ZFh4Q0R5TFlpLzBycjJRcG1DdFhiNlJxTlVZCmluR1c4UEtlczZkMjhFcFdvaGFm
+            Z3dDZEtGNWVGM1QyemI4Z3gxV0hOWEkKLS0tIDFkcmxTM0lzaUt2ek03dUUyRXQz
+            eW1QNVYyY3dFTkNhZFNTOStKZXEvMmsKlS8WgGxohLB5wB/TuWVn9gtCoaoEVsDU
+            KzqCWW1f0/jTCBk3BdismPC+3lO369ZfeRAnG7yUCRUuMbAlFl8nKQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2026-05-02T16:52:29Z"
+    mac: ENC[AES256_GCM,data:v0Q6352fU2wip7DyD5M+g9n0VZRxmRCHqhttjSk8TQipiF6sKb7+im6c3OChuC5SSGSbtJShA7K3/asYnRl8Wj2B6GRisXM2ZynnLsAaQHbGnFQQH9kEkB66Bknou2Y33diYi9/Go6J1TCh/XG0LkUjQxpurErPZcE9hcJExKWs=,iv:qcfwsOFHuFZHKNB8NhI2Y39ZHoBmds3xVHRKRGW7iqM=,tag:hHpvjQU+k+sRevM8WmERgA==,type:str]
+    encrypted_regex: ^(data|stringData|email|addresses)$
+    version: 3.12.2
