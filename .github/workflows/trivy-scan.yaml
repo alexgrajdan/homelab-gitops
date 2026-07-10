@@ -3,8 +3,6 @@ name: Trivy IaC Scanner
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   scan-manifests:
